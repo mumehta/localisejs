@@ -1,0 +1,18 @@
+# localisejs
+Python app for rest apis
+
+# Prerequisites
+
+* Set env. parameter: AUTHORIZATION
+* Set env. parameter: PROJECT_KEY
+
+# How to run
+
+Execute following script :
+
+```#!/bin/bash
+set -xe
+docker-compose down
+docker-compose build
+docker-compose run localisejs-push --operation get_phrases --state $Phrase_State
+docker-compose down```

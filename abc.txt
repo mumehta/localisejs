@@ -1,0 +1,4 @@
+test string
+translate me
+just another string
+You got %x messages.

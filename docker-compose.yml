@@ -1,0 +1,49 @@
+---
+version: '2'
+services:
+  localisejs-push:
+    build:
+      context: .
+    working_dir: /usr/src
+    environment:
+      - CONTENT_TYPE
+      - ACCEPT
+      - AUTHORIZATION
+      - PROJECT_KEY
+    entrypoint:
+      - python
+      - localisejs.py
+      - --operation
+      - push_translation
+
+  localisejs-download:
+    build:
+      context: .
+    working_dir: /usr/src
+    environment:
+      - CONTENT_TYPE
+      - ACCEPT
+      - AUTHORIZATION
+      - PROJECT_KEY
+    volumes:
+      - .:/usr/src
+    entrypoint:
+      - python
+      - localisejs.py
+      - --operation
+      - download_translation
+
+  localisejs-getphrases:
+    build:
+      context: .
+    working_dir: /usr/src
+    environment:
+      - CONTENT_TYPE
+      - ACCEPT
+      - AUTHORIZATION
+      - PROJECT_KEY
+    entrypoint:
+      - python
+      - localisejs.py
+      - --operation
+      - get_phrases
